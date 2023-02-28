@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+
+}
+
+ .general-info {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  padding: 4px;
+}
