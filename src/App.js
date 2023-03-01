@@ -14,7 +14,7 @@ export default function App() {
     email: "",
   });
 
-  function handleChange(e) {
+  function handleGenInfoChange(e) {
     // console.log(e);
     const {value, name} = e.target
     // console.log(`value: ${value}, name:${name}`)
@@ -50,7 +50,7 @@ export default function App() {
     <div>
       <h3>General Information</h3>
       <GeneralInfo
-        handleChange={handleChange}
+        handleGenInfoChange={handleGenInfoChange}
         genInfo={genInfo}
       />
       <h3>Education</h3>

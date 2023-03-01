@@ -2,26 +2,7 @@ import React from "react";
 
 export default function EducationInfo(props) {
   const {eduInfo, handleEduInfoChange} = props;
-  // const [eduInfo, setEduInfo] = React.useState({
-  //   university:"",
-  //   location:"",
-  //   degree:"",
-  //   from:"",
-  //   to:"",
-  // });
-
-  // function handleEduInfoChange(e) {
-  //   console.log(e);
-  //   const {name, value} = e.target;
-
-  //   setEduInfo(prevInfo => {
-  //     return {
-  //       ...prevInfo,
-  //       [name]: value
-  //     }
-  //   })
-  // }
-
+  
   return(
     <form className="education-info">
       <label>
