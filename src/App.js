@@ -17,8 +17,28 @@ export default function App() {
   function handleChange(e) {
     // console.log(e);
     const {value, name} = e.target
-    console.log(`value: ${value}, name:${name}`)
+    // console.log(`value: ${value}, name:${name}`)
     setGenInfo( prevInfo => {
+      return {
+        ...prevInfo,
+        [name]: value
+      }
+    })
+  }
+
+  const [eduInfo, setEduInfo] = React.useState({
+    university:"",
+    location:"",
+    degree:"",
+    from:"",
+    to:"",
+  });
+
+  function handleEduInfoChange(e) {
+    // console.log(e);
+    const {name, value} = e.target;
+
+    setEduInfo(prevInfo => {
       return {
         ...prevInfo,
         [name]: value
@@ -35,8 +55,8 @@ export default function App() {
       />
       <h3>Education</h3>
       <EducationInfo
-        // handleChange={handleChange}
-        // eduInfo={eduInfo}
+        handleEduInfoChange={handleEduInfoChange}
+        eduInfo={eduInfo}
       />
     </div>
   );

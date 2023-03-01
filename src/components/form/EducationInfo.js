@@ -1,25 +1,26 @@
 import React from "react";
 
 export default function EducationInfo(props) {
-  const [eduInfo, setEduInfo] = React.useState({
-    university:"",
-    location:"",
-    degree:"",
-    from:"",
-    to:"",
-  });
+  const {eduInfo, handleEduInfoChange} = props;
+  // const [eduInfo, setEduInfo] = React.useState({
+  //   university:"",
+  //   location:"",
+  //   degree:"",
+  //   from:"",
+  //   to:"",
+  // });
 
-  function handleChange(e) {
-    console.log(e);
-    const {name, value} = e.target;
+  // function handleEduInfoChange(e) {
+  //   console.log(e);
+  //   const {name, value} = e.target;
 
-    setEduInfo(prevInfo => {
-      return {
-        ...prevInfo,
-        [name]: value
-      }
-    })
-  }
+  //   setEduInfo(prevInfo => {
+  //     return {
+  //       ...prevInfo,
+  //       [name]: value
+  //     }
+  //   })
+  // }
 
   return(
     <form className="education-info">
@@ -28,7 +29,7 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="San Jose State University"
-          onChange={handleChange}
+          onChange={handleEduInfoChange}
           name="university"
           value={eduInfo.university}
         />
@@ -38,7 +39,7 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="San Jose, Calif"
-          onChange={handleChange}
+          onChange={handleEduInfoChange}
           name="location"
           value={eduInfo.location}
         />
@@ -48,7 +49,7 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="Computer Science"
-          onChange={handleChange}
+          onChange={handleEduInfoChange}
           name="degree"
           value={eduInfo.degree}
         />
@@ -58,7 +59,7 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="Aug 20XX"
-          onChange={handleChange}
+          onChange={handleEduInfoChange}
           name="from"
           value={eduInfo.from}
         />
@@ -68,7 +69,7 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="Dec 20XY"
-          onChange={handleChange}
+          onChange={handleEduInfoChange}
           name="to"
           value={eduInfo.to}
           />
