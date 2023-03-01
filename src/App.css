@@ -3,7 +3,14 @@
 
 }
 
- .general-info {
+ /* .general-info {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  padding: 4px;
+} */
+
+form {
   display: flex;
   flex-direction: column;
   border: 2px solid red;

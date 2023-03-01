@@ -1,13 +1,6 @@
 import React from "react";
 
 export default function GeneralInfo(props) {
-    // React.useEffect(() => {
-    //   props.onChange({
-    //     inputs
-    //   });
-    // }, [inputs])
-    // const setInput(e.target.value) = props.setInput(e.target.value);
-
     return(
       <form className="general-info">
         <label>

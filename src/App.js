@@ -1,9 +1,11 @@
 import React from "react";
 import GeneralInfo from "./components/form/GeneralInfo";
+import EducationInfo from "./components/form/EducationInfo";
 import "./App.css";
 
 export default function App() {
 
+  // genInfo.address, .phoneNumber, .email,
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",
     lastName: "",
@@ -15,7 +17,7 @@ export default function App() {
   function handleChange(e) {
     // console.log(e);
     const {value, name} = e.target
-    // console.log(`value: ${value}, name:${name}`)
+    console.log(`value: ${value}, name:${name}`)
     setGenInfo( prevInfo => {
       return {
         ...prevInfo,
@@ -26,12 +28,16 @@ export default function App() {
 
   return (
     <div>
+      <h3>General Information</h3>
       <GeneralInfo
         handleChange={handleChange}
         genInfo={genInfo}
       />
-
-      <h1>hello {genInfo.firstName} {genInfo.lastName}</h1>
+      <h3>Education</h3>
+      <EducationInfo
+        // handleChange={handleChange}
+        // eduInfo={eduInfo}
+      />
     </div>
   );
 }
