@@ -1,25 +1,12 @@
 import React from "react";
 
-export default function GeneralInfo() {
-    const [genInfo, setGenInfo] = React.useState({
-      firstName: "",
-      lastName: "",
-      address: "",
-      phoneNumber: "",
-      email: "",
-    });
-
-    function handleChange(event) {
-      console.log(event);
-      const {name, value} = event.target;
-
-      setGenInfo(prevInfo => {
-        return {
-          ...prevInfo,
-          [name]: value
-        }
-      });
-    }
+export default function GeneralInfo(props) {
+    // React.useEffect(() => {
+    //   props.onChange({
+    //     inputs
+    //   });
+    // }, [inputs])
+    // const setInput(e.target.value) = props.setInput(e.target.value);
 
     return(
       <form className="general-info">
@@ -28,9 +15,9 @@ export default function GeneralInfo() {
           <input
             type="text"
             placeholder="John"
-            onChange={handleChange}
+            onChange={(e) => props.handleChange(e)}
             name="firstName"
-            value={genInfo.firstName}
+            value={props.genInfo.firstName}
           />
         </label>
         <label>
@@ -38,9 +25,9 @@ export default function GeneralInfo() {
           <input
             type="text"
             placeholder="Doe"
-            onChange={handleChange}
+            onChange={(e) => props.handleChange(e)}
             name="lastName"
-            value={genInfo.lastName}
+            value={props.genInfo.lastName}
           />
         </label>
         <label>
@@ -48,9 +35,9 @@ export default function GeneralInfo() {
           <input
             type="text"
             placeholder="San Jose, California"
-            onChange={handleChange}
+            onChange={(e) => props.handleChange(e)}
             name="address"
-            value={genInfo.address}
+            value={props.genInfo.address}
           />
         </label>
         <label>
@@ -58,9 +45,9 @@ export default function GeneralInfo() {
           <input
             type="text"
             placeholder="123-436-3333"
-            onChange={handleChange}
+            onChange={(e) => props.handleChange(e)}
             name="phoneNumber"
-            value={genInfo.phoneNumber}
+            value={props.genInfo.phoneNumber}
           />
         </label>
         <label>
@@ -68,9 +55,9 @@ export default function GeneralInfo() {
           <input
             type="text"
             placeholder="johnDoe@email.xyz"
-            onChange={handleChange}
+            onChange={(e) => props.handleChange(e)}
             name="email"
-            value={genInfo.email}
+            value={props.genInfo.email}
             />
         </label>
       </form>
