@@ -2,6 +2,7 @@ import React from "react";
 import GeneralInfo from "./components/form/GeneralInfo";
 import EducationInfo from "./components/form/EducationInfo";
 import "./App.css";
+import ExperienceInfo from "./components/form/ExperienceInfo";
 
 export default function App() {
 
@@ -58,6 +59,8 @@ export default function App() {
         handleEduInfoChange={handleEduInfoChange}
         eduInfo={eduInfo}
       />
+      <h3>Experience</h3>
+      <ExperienceInfo/>
     </div>
   );
 }
