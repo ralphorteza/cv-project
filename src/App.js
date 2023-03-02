@@ -1,11 +1,12 @@
 import React from "react";
 import GeneralInfo from "./components/form/GeneralInfo";
 import EducationInfo from "./components/form/EducationInfo";
-import "./App.css";
 import ExperienceInfo from "./components/form/ExperienceInfo";
+import CVPreview from "./components/CVPreveiew";
+import "./App.css";
 
 export default function App() {
-
+  
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",
     lastName: "",
@@ -47,6 +48,26 @@ export default function App() {
     })
   }
 
+  const [experienceInfo, setExperienceInfo] = React.useState({
+    company:"",
+    location:"",
+    position:"",
+    from:"",
+    to:"",
+  });
+
+  function handleExperienceInfoChange(e) {
+    // console.log(e);
+    const {name, value} = e.target;
+
+    setExperienceInfo(prevInfo => {
+      return {
+        ...prevInfo,
+        [name]: value
+      }
+    })
+  }
+
   return (
     <div>
       <h3>General Information</h3>
@@ -60,7 +81,13 @@ export default function App() {
         eduInfo={eduInfo}
       />
       <h3>Experience</h3>
-      <ExperienceInfo/>
+      <ExperienceInfo
+        handleExperienceInfoChange={handleExperienceInfoChange}
+        experienceInfo={experienceInfo}
+      />
+
+      <h2>Preview</h2>
+      <CVPreview/>
     </div>
   );
 }

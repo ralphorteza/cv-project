@@ -1,26 +1,7 @@
 import React from "react"
 
-export default function ExperienceInfo() {
-
-  const [experienceInfo, setEduInfo] = React.useState({
-    company:"",
-    location:"",
-    position:"",
-    from:"",
-    to:"",
-  });
-
-  function handleExperienceInfoChange(e) {
-    // console.log(e);
-    const {name, value} = e.target;
-
-    setEduInfo(prevInfo => {
-      return {
-        ...prevInfo,
-        [name]: value
-      }
-    })
-  }
+export default function ExperienceInfo(props) {
+  const {experienceInfo, handleExperienceInfoChange} = props;
 
   return(
     <form className="experience-info">
@@ -45,7 +26,7 @@ export default function ExperienceInfo() {
         />
       </label>
       <label>
-        position:
+        Position:
         <input
           type="text"
           placeholder="Team Manager"
@@ -55,7 +36,7 @@ export default function ExperienceInfo() {
         />
       </label>
       <label>
-        from:
+        From:
         <input
           type="text"
           placeholder="Aug 20XX"
@@ -65,7 +46,7 @@ export default function ExperienceInfo() {
         />
       </label>
       <label>
-        to:
+        To:
         <input
           type="text"
           placeholder="Dec 20XY"
