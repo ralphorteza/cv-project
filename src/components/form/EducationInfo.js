@@ -2,7 +2,7 @@ import React from "react";
 
 export default function EducationInfo(props) {
   const {eduInfo, handleEduInfoChange} = props;
-  
+
   return(
     <form className="education-info">
       <label>
@@ -46,7 +46,7 @@ export default function EducationInfo(props) {
         />
       </label>
       <label>
-        Email:
+        to:
         <input
           type="text"
           placeholder="Dec 20XY"

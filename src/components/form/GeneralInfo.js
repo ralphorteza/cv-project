@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GeneralInfo(props) {
   const {genInfo, handleGenInfoChange} = props;
-
+      
   return(
     <form className="general-info">
       <label>
@@ -29,7 +29,7 @@ export default function GeneralInfo(props) {
         Address:
         <input
           type="text"
-          placeholder="San Jose, California"
+          placeholder="123 Elsewhere st"
           onChange={handleGenInfoChange}
           name="address"
           value={genInfo.address}
@@ -39,21 +39,21 @@ export default function GeneralInfo(props) {
         Phone Number:
         <input
           type="text"
-          placeholder="123-436-3333"
+          placeholder="123-456-789"
           onChange={handleGenInfoChange}
-          name="phoneNumber"
-          value={genInfo.phoneNumber}
+          name="phone"
+          value={genInfo.phone}
         />
       </label>
       <label>
         Email:
         <input
           type="text"
-          placeholder="johnDoe@email.xyz"
+          placeholder="JohnDoe@email.zxy"
           onChange={handleGenInfoChange}
           name="email"
           value={genInfo.email}
-          />
+        />
       </label>
     </form>
   );

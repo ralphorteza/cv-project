@@ -5,12 +5,11 @@ import "./App.css";
 
 export default function App() {
 
-  // genInfo.address, .phoneNumber, .email,
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",
     lastName: "",
     address: "",
-    phoneNumber: "",
+    phone: "",
     email: "",
   });
 
@@ -25,6 +24,7 @@ export default function App() {
       }
     })
   }
+
 
   const [eduInfo, setEduInfo] = React.useState({
     university:"",
