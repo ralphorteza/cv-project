@@ -4,6 +4,8 @@ import EducationInfo from "./form/EducationInfo";
 import ExperienceInfo from "./form/ExperienceInfo";
 
 export default function CVPreview(props) {
+  const {data, handleData} = props;
+
 
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",
@@ -11,6 +13,7 @@ export default function CVPreview(props) {
     address: "",
     phone: "",
     email: "",
+    id: "001a",
   });
 
   function handleGenInfoChange(e) {
@@ -23,6 +26,8 @@ export default function CVPreview(props) {
         [name]: value
       }
     })
+
+    handleData(genInfo);
   }
 
 
@@ -44,6 +49,8 @@ export default function CVPreview(props) {
         [name]: value
       }
     })
+
+    handleData(eduInfo);
   }
 
   const [experienceInfo, setExperienceInfo] = React.useState({

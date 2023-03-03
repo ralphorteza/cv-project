@@ -10,15 +10,37 @@ export default function App() {
     () => JSON.parse(localStorage.getItem("data")) || []
   );
 
-  function handleData() {}
-
   React.useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
   }, [data]);
-  
+
+  function handleData(e) {
+    console.log(e)
+    // if (data.some(elem => elem.id === e.id)) {
+    //   console.log("true!")
+    // } else {
+    //   setData(prevData => {
+    //     const newItem =
+    //   })
+    // }
+  }
+
+  // function handleData(e) {
+  //     const {value, name} = e.target;
+  //     setData( prevInfo => {
+  //       return {
+  //         ...prevInfo,
+  //         [name]: value
+  //       }
+  //     });
+  // }
+  console.log(data)
   return (
     <div>
-      <CVPreview />
+      <CVPreview
+        handleData={handleData}
+        data={data}
+      />
     </div>
   );
 }
