@@ -3,6 +3,7 @@ import GeneralInfo from "./components/form/GeneralInfo";
 import EducationInfo from "./components/form/EducationInfo";
 import ExperienceInfo from "./components/form/ExperienceInfo";
 import CVPreview from "./components/CVPreview";
+import { nanoid } from "nanoid";
 import "./App.css";
 
 export default function App() {
@@ -11,6 +12,10 @@ export default function App() {
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("data")) || []
   );
+
+  function handleData() {
+
+  }
 
   React.useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
