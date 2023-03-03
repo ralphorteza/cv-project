@@ -2,11 +2,15 @@ import React from "react";
 import GeneralInfo from "./components/form/GeneralInfo";
 import EducationInfo from "./components/form/EducationInfo";
 import ExperienceInfo from "./components/form/ExperienceInfo";
-import CVPreview from "./components/CVPreveiew";
+import CVPreview from "./components/CVPreview";
 import "./App.css";
 
 export default function App() {
-  
+  // const [cvData, setCVData] = React.useState([]);
+
+  // function handleData() {
+    
+  // }
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",
     lastName: "",
@@ -68,6 +72,14 @@ export default function App() {
     })
   }
 
+  const cvData = {
+    genInfo,
+    eduInfo,
+    experienceInfo,
+  };
+
+  console.log(cvData)
+  
   return (
     <div>
       <h3>General Information</h3>
