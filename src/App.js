@@ -6,11 +6,16 @@ import CVPreview from "./components/CVPreview";
 import "./App.css";
 
 export default function App() {
-  // const [cvData, setCVData] = React.useState([]);
 
-  // function handleData() {
-    
-  // }
+  /* Find a way to have multiple instances of ExperienceInfo */
+  const [data, setData] = React.useState(
+    () => JSON.parse(localStorage.getItem("data")) || []
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data))
+  }, [data]);
+
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",
     lastName: "",
@@ -72,13 +77,13 @@ export default function App() {
     })
   }
 
-  const cvData = {
-    genInfo,
-    eduInfo,
-    experienceInfo,
-  };
+  // const cvData = {
+  //   genInfo,
+  //   eduInfo,
+  //   experienceInfo,
+  // };
 
-  console.log(cvData)
+  // console.log(cvData)
   
   return (
     <div>
