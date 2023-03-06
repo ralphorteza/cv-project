@@ -23,7 +23,6 @@ export default function App() {
     // console.log(e.id)
     const obj = e;
 
-    console.log(data.length)
     if (data.length === 0) {
       return setData(prevData => {
         return [obj, ...prevData];
@@ -42,19 +41,13 @@ export default function App() {
         });
         return array;
       });
+    } else {
+      return setData(prevData => {
+        return [obj, ...prevData];
+      })
     }
 
   }
-  // console.log(data)
-  // function handleData(e) {
-  //     const {value, name} = e.target;
-  //     setData( prevInfo => {
-  //       return {
-  //         ...prevInfo,
-  //         [name]: value
-  //       }
-  //     });
-  // }
 
   return (
     <div>

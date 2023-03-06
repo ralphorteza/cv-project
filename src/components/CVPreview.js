@@ -37,6 +37,7 @@ export default function CVPreview(props) {
     degree:"",
     from:"",
     to:"",
+    id: "edu001"
   });
 
   function handleEduInfoChange(e) {
