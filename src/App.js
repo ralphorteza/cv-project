@@ -5,18 +5,14 @@ import "./App.css";
 
 export default function App() {
   const initialState = [
-    {genInfo: {id:"001", firstName:"", lastName:"", address:"", phone:"", email:"",}},
-    
+    {category:"general", id:"001", firstName:"", lastName:"", address:"", phone:"", email:""},
+    {category:"education", id:"002", university:"", location:"", degree:"", from:"", to:""},
+    {category:"experience", id:"003", company:"", location:"", position:"", from:"", to:""}
   ]
   /* Find a way to have multiple instances of ExperienceInfo */
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("data")) || initialState
   );
-  // const [data, setData] = React.useState(
-  //   () => JSON.parse(localStorage.getItem("data")) || [
-  //     {genInfo: {id:"", firstName:"", lastName:"", address:"", phone: ""}}
-  //   ]
-  // );
   
   React.useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
@@ -47,7 +43,7 @@ export default function App() {
     } else {
       return setData(prevData => {
         return [obj, ...prevData];
-      })
+      });
     }
 
   }
