@@ -5,7 +5,7 @@ import ExperienceInfo from "./form/ExperienceInfo";
 
 export default function CVPreview(props) {
   const {data, handleData} = props;
-
+  // console.log(data)
   // console.log(data.genInfo)
   const [genInfo, setGenInfo] = React.useState({
     firstName: "",

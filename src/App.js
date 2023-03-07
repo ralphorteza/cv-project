@@ -4,7 +4,10 @@ import CVPreview from "./components/CVPreview";
 import "./App.css";
 
 export default function App() {
-  const initialState = []
+  const initialState = [
+    {genInfo: {id:"001", firstName:"", lastName:"", address:"", phone:"", email:"",}},
+    
+  ]
   /* Find a way to have multiple instances of ExperienceInfo */
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("data")) || initialState
