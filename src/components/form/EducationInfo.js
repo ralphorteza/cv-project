@@ -1,7 +1,8 @@
 import React from "react";
 
-export default function EducationInfo(props) {
-  const {eduInfo, handleEduInfoChange} = props;
+export default function EducationInfo({data, handleData}) {
+  const education = data.find(section => section.category === "education");
+  const id = education.id;
 
   return(
     <form className="education-info">
@@ -10,9 +11,9 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="San Jose State University"
-          onChange={handleEduInfoChange}
+          onChange={(e)=>handleData(e, id)}
           name="university"
-          value={eduInfo.university}
+          value={education.university}
         />
       </label>
       <label>
@@ -20,9 +21,9 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="San Jose, Calif"
-          onChange={handleEduInfoChange}
+          onChange={(e)=>handleData(e, id)}
           name="location"
-          value={eduInfo.location}
+          value={education.location}
         />
       </label>
       <label>
@@ -30,9 +31,9 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="Computer Science"
-          onChange={handleEduInfoChange}
+          onChange={(e)=>handleData(e, id)}
           name="degree"
-          value={eduInfo.degree}
+          value={education.degree}
         />
       </label>
       <label>
@@ -40,9 +41,9 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="Aug 20XX"
-          onChange={handleEduInfoChange}
+          onChange={(e)=>handleData(e, id)}
           name="from"
-          value={eduInfo.from}
+          value={education.from}
         />
       </label>
       <label>
@@ -50,9 +51,9 @@ export default function EducationInfo(props) {
         <input
           type="text"
           placeholder="Dec 20XY"
-          onChange={handleEduInfoChange}
+          onChange={(e)=>handleData(e, id)}
           name="to"
-          value={eduInfo.to}
+          value={education.to}
           />
       </label>
     </form>

@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function GeneralInfo(props) {
-  const {genInfo, handleGenInfoChange} = props;
-      
+export default function GeneralInfo({data, handleData}) {
+  const general = data.find(section => section.category === "general");
+  const id = general.id;
+
   return(
     <form className="general-info">
       <label>
@@ -10,9 +11,9 @@ export default function GeneralInfo(props) {
         <input
           type="text"
           placeholder="John"
-          onChange={handleGenInfoChange}
+          onChange={(e)=>handleData(e,id)}
           name="firstName"
-          value={genInfo.firstName}
+          value={general.firstName}
         />
       </label>
       <label>
@@ -20,9 +21,9 @@ export default function GeneralInfo(props) {
         <input
           type="text"
           placeholder="Doe"
-          onChange={handleGenInfoChange}
+          onChange={(e)=>handleData(e,id)}
           name="lastName"
-          value={genInfo.lastName}
+          value={general.lastName}
         />
       </label>
       <label>
@@ -30,9 +31,9 @@ export default function GeneralInfo(props) {
         <input
           type="text"
           placeholder="123 Elsewhere st"
-          onChange={handleGenInfoChange}
+          onChange={(e)=>handleData(e,id)}
           name="address"
-          value={genInfo.address}
+          value={general.address}
         />
       </label>
       <label>
@@ -40,9 +41,9 @@ export default function GeneralInfo(props) {
         <input
           type="text"
           placeholder="123-456-789"
-          onChange={handleGenInfoChange}
+          onChange={(e)=>handleData(e,id)}
           name="phone"
-          value={genInfo.phone}
+          value={general.phone}
         />
       </label>
       <label>
@@ -50,9 +51,9 @@ export default function GeneralInfo(props) {
         <input
           type="text"
           placeholder="JohnDoe@email.zxy"
-          onChange={handleGenInfoChange}
+          onChange={(e)=>handleData(e,id)}
           name="email"
-          value={genInfo.email}
+          value={general.email}
         />
       </label>
     </form>

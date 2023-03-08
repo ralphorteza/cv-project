@@ -5,10 +5,11 @@ import "./App.css";
 
 export default function App() {
   const initialState = [
-    {category:"general", id: nanoid(), firstName:"", lastName:"", address:"", phone:"", email:""},
+    {category:"general", id: nanoid(), firstName:"ralph", lastName:"orteza", address:"", phone:"1234", email:""},
     {category:"education", id: nanoid(), university:"", location:"", degree:"", from:"", to:""},
     {category:"experience", id: nanoid(), company:"", location:"", position:"", from:"", to:""}
   ]
+  
   /* Find a way to have multiple instances of ExperienceInfo */
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("data")) || initialState
@@ -18,39 +19,24 @@ export default function App() {
     localStorage.setItem("data", JSON.stringify(data))
   }, [data]);
 
-  function handleData(e) {
+  function handleData(e, id) {
+    const {value, name} = e.target;
+    setData(prevData => {
+      const newArray = [];
 
+      for (let i = 0; i < prevData.length; i++) {
+        const oldData = prevData[i];
+
+        if (oldData.id === id) {
+          newArray.push({...oldData, [name]: value});
+        } else {
+          newArray.push(oldData);
+        }
+      }
+
+      return newArray;
+    });
   }
-
-  // function handleData(e) {
-  //   // console.log(e.id)
-  //   const obj = e;
-
-  //   if (data.length === 0) {
-  //     return setData(prevData => {
-  //       return [obj, ...prevData];
-  //     });
-  //   }
-
-  //   if (data.some( element => element.id === obj.id)) {
-  //     return setData(prevData => {
-  //       const array = [];
-  //       prevData.forEach( prevElem => {
-  //         if (prevElem.id === obj.id) {
-  //           array.push(obj);
-  //         } else {
-  //           array.push(prevElem);
-  //         }
-  //       });
-  //       return array;
-  //     });
-  //   } else {
-  //     return setData(prevData => {
-  //       return [obj, ...prevData];
-  //     });
-  //   }
-
-  // }
 
   return (
     <div>

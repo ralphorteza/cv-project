@@ -1,8 +1,9 @@
 import React from "react"
 
-export default function ExperienceInfo(props) {
-  const {experienceInfo, handleExperienceInfoChange} = props;
-
+export default function experience({data, handleData}) {
+  const experience = data.find(section => section.category === "experience");
+  const id = experience.id;
+  
   return(
     <form className="experience-info">
       <label>
@@ -10,9 +11,9 @@ export default function ExperienceInfo(props) {
         <input
           type="text"
           placeholder="SRE"
-          onChange={handleExperienceInfoChange}
+          onChange={(e) => handleData(e, id)}
           name="company"
-          value={experienceInfo.company}
+          value={experience.company}
         />
       </label>
       <label>
@@ -20,9 +21,9 @@ export default function ExperienceInfo(props) {
         <input
           type="text"
           placeholder="San Jose, Calif"
-          onChange={handleExperienceInfoChange}
+          onChange={(e) => handleData(e, id)}
           name="location"
-          value={experienceInfo.location}
+          value={experience.location}
         />
       </label>
       <label>
@@ -30,9 +31,9 @@ export default function ExperienceInfo(props) {
         <input
           type="text"
           placeholder="Team Manager"
-          onChange={handleExperienceInfoChange}
+          onChange={(e) => handleData(e, id)}
           name="position"
-          value={experienceInfo.position}
+          value={experience.position}
         />
       </label>
       <label>
@@ -40,9 +41,9 @@ export default function ExperienceInfo(props) {
         <input
           type="text"
           placeholder="Aug 20XX"
-          onChange={handleExperienceInfoChange}
+          onChange={(e) => handleData(e, id)}
           name="from"
-          value={experienceInfo.from}
+          value={experience.from}
         />
       </label>
       <label>
@@ -50,9 +51,9 @@ export default function ExperienceInfo(props) {
         <input
           type="text"
           placeholder="Dec 20XY"
-          onChange={handleExperienceInfoChange}
+          onChange={(e) => handleData(e, id)}
           name="to"
-          value={experienceInfo.to}
+          value={experience.to}
           />
       </label>
     </form>
