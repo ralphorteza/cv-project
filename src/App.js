@@ -1,5 +1,5 @@
 import React from "react";
-import CVPreview from "./components/CVPreview";
+import FormOverview from "./components/FormOverview";
 // import { nanoid } from "nanoid";
 import "./App.css";
 
@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <div>
-      <CVPreview
+      <FormOverview
         handleData={handleData}
         data={data}
       />
