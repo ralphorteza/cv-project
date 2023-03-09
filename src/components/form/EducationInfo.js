@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function EducationInfo({data, handleData}) {
-  const education = data.find(section => section.category === "education");
-  const id = education.id;
+export default function EducationInfo({id, data, handleData}) {
 
   return(
     <form className="education-info">
@@ -13,7 +11,7 @@ export default function EducationInfo({data, handleData}) {
           placeholder="San Jose State University"
           onChange={(e)=>handleData(e, id)}
           name="university"
-          value={education.university}
+          value={data.university}
         />
       </label>
       <label>
@@ -23,7 +21,7 @@ export default function EducationInfo({data, handleData}) {
           placeholder="San Jose, Calif"
           onChange={(e)=>handleData(e, id)}
           name="location"
-          value={education.location}
+          value={data.location}
         />
       </label>
       <label>
@@ -33,7 +31,7 @@ export default function EducationInfo({data, handleData}) {
           placeholder="Computer Science"
           onChange={(e)=>handleData(e, id)}
           name="degree"
-          value={education.degree}
+          value={data.degree}
         />
       </label>
       <label>
@@ -43,7 +41,7 @@ export default function EducationInfo({data, handleData}) {
           placeholder="Aug 20XX"
           onChange={(e)=>handleData(e, id)}
           name="from"
-          value={education.from}
+          value={data.from}
         />
       </label>
       <label>
@@ -53,7 +51,7 @@ export default function EducationInfo({data, handleData}) {
           placeholder="Dec 20XY"
           onChange={(e)=>handleData(e, id)}
           name="to"
-          value={education.to}
+          value={data.to}
           />
       </label>
     </form>

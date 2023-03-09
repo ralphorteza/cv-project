@@ -1,9 +1,7 @@
 import React from "react"
 
-export default function experience({data, handleData}) {
-  const experience = data.find(section => section.category === "experience");
-  const id = experience.id;
-  
+export default function experience({id, data, handleData}) {
+
   return(
     <form className="experience-info">
       <label>
@@ -13,7 +11,7 @@ export default function experience({data, handleData}) {
           placeholder="SRE"
           onChange={(e) => handleData(e, id)}
           name="company"
-          value={experience.company}
+          value={data.company}
         />
       </label>
       <label>
@@ -23,7 +21,7 @@ export default function experience({data, handleData}) {
           placeholder="San Jose, Calif"
           onChange={(e) => handleData(e, id)}
           name="location"
-          value={experience.location}
+          value={data.location}
         />
       </label>
       <label>
@@ -33,7 +31,7 @@ export default function experience({data, handleData}) {
           placeholder="Team Manager"
           onChange={(e) => handleData(e, id)}
           name="position"
-          value={experience.position}
+          value={data.position}
         />
       </label>
       <label>
@@ -43,7 +41,7 @@ export default function experience({data, handleData}) {
           placeholder="Aug 20XX"
           onChange={(e) => handleData(e, id)}
           name="from"
-          value={experience.from}
+          value={data.from}
         />
       </label>
       <label>
@@ -53,7 +51,7 @@ export default function experience({data, handleData}) {
           placeholder="Dec 20XY"
           onChange={(e) => handleData(e, id)}
           name="to"
-          value={experience.to}
+          value={data.to}
           />
       </label>
     </form>

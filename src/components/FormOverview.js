@@ -11,19 +11,25 @@ export default function FormOverview({data, handleData, addSubForm}) {
     />
   );
 
-  const educationInformation = (
+  const filterEducation = data.filter(element => element.category === "education");
+  const educationInformation = filterEducation.map(education => (
     <EducationInfo
-      data={data}
+      key={education.id}
+      id={education.id}
+      data={education}
       handleData={handleData}
     />
-  );
+  ));
 
-  const experienceInformation = (
+  const filterExperience = data.filter(element => element.category === "experience");
+  const experienceInformation = filterExperience.map(experience => (
     <ExperienceInfo
-      data={data}
+      key={experience.id}
+      id={experience.id}
+      data={experience}
       handleData={handleData}
     />
-  );
+  ));
 
   return (
     <div>
