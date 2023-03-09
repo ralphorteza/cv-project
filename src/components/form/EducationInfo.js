@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function EducationInfo({id, data, handleData, deleteSubForm}) {
+export default function EducationInfo({id, education, handleData, deleteSubForm}) {
 
   return(
     <form className="education-info">
@@ -12,7 +12,7 @@ export default function EducationInfo({id, data, handleData, deleteSubForm}) {
           placeholder="San Jose State University"
           onChange={(e)=>handleData(e, id)}
           name="university"
-          value={data.university}
+          value={education.university}
         />
       </label>
       <label>
@@ -22,7 +22,7 @@ export default function EducationInfo({id, data, handleData, deleteSubForm}) {
           placeholder="San Jose, Calif"
           onChange={(e)=>handleData(e, id)}
           name="location"
-          value={data.location}
+          value={education.location}
         />
       </label>
       <label>
@@ -32,7 +32,7 @@ export default function EducationInfo({id, data, handleData, deleteSubForm}) {
           placeholder="Computer Science"
           onChange={(e)=>handleData(e, id)}
           name="degree"
-          value={data.degree}
+          value={education.degree}
         />
       </label>
       <label>
@@ -42,7 +42,7 @@ export default function EducationInfo({id, data, handleData, deleteSubForm}) {
           placeholder="Aug 20XX"
           onChange={(e)=>handleData(e, id)}
           name="from"
-          value={data.from}
+          value={education.from}
         />
       </label>
       <label>
@@ -52,7 +52,7 @@ export default function EducationInfo({id, data, handleData, deleteSubForm}) {
           placeholder="Dec 20XY"
           onChange={(e)=>handleData(e, id)}
           name="to"
-          value={data.to}
+          value={education.to}
           />
       </label>
     </form>

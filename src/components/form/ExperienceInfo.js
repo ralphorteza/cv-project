@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
+export default function ExperienceInfo({id, experience, handleData, deleteSubForm}) {
 
   return(
     <form className="experience-info">
@@ -12,7 +12,7 @@ export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
           placeholder="SRE"
           onChange={(e) => handleData(e, id)}
           name="company"
-          value={data.company}
+          value={experience.company}
         />
       </label>
       <label>
@@ -22,7 +22,7 @@ export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
           placeholder="San Jose, Calif"
           onChange={(e) => handleData(e, id)}
           name="location"
-          value={data.location}
+          value={experience.location}
         />
       </label>
       <label>
@@ -32,7 +32,7 @@ export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
           placeholder="Team Manager"
           onChange={(e) => handleData(e, id)}
           name="position"
-          value={data.position}
+          value={experience.position}
         />
       </label>
       <label>
@@ -42,7 +42,7 @@ export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
           placeholder="Aug 20XX"
           onChange={(e) => handleData(e, id)}
           name="from"
-          value={data.from}
+          value={experience.from}
         />
       </label>
       <label>
@@ -52,7 +52,7 @@ export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
           placeholder="Dec 20XY"
           onChange={(e) => handleData(e, id)}
           name="to"
-          value={data.to}
+          value={experience.to}
           />
       </label>
     </form>

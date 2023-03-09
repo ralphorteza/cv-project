@@ -4,9 +4,10 @@ import EducationInfo from "./form/EducationInfo";
 import ExperienceInfo from "./form/ExperienceInfo";
 
 export default function FormOverview({data, handleData, addSubForm, deleteSubForm}) {
+  const filterGeneral = data.filter(element => element.category === "general");
   const generalInformation = (
     <GeneralInfo 
-      data={data}
+      data={filterGeneral}
       handleData={handleData}
     />
   );
@@ -16,7 +17,7 @@ export default function FormOverview({data, handleData, addSubForm, deleteSubFor
     <EducationInfo
       key={education.id}
       id={education.id}
-      data={education}
+      education={education}
       handleData={handleData}
       deleteSubForm={deleteSubForm}
     />
@@ -27,7 +28,7 @@ export default function FormOverview({data, handleData, addSubForm, deleteSubFor
     <ExperienceInfo
       key={experience.id}
       id={experience.id}
-      data={experience}
+      experience={experience}
       handleData={handleData}
       deleteSubForm={deleteSubForm}
     />
