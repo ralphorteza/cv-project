@@ -38,11 +38,40 @@ export default function App() {
     });
   }
 
+  function addSubForm(e) {
+    const categoryType = e.target.value;
+    let type;
+    if (categoryType === "experience") {
+      type = {
+        category:"experience",
+        id: nanoid(),
+        company:"",
+        location:"",
+        position:"",
+        from:"",
+        to:""
+      };
+    } else {
+      type = {
+        category:"education",
+        id: nanoid(),
+        university:"",
+        location:"",
+        degree:"",
+        from:"",
+        to:""
+      };
+    }
+
+    setData(prevData => [...prevData, type])
+  }
+
   return (
     <div>
       <FormOverview
         handleData={handleData}
         data={data}
+        addSubForm={addSubForm}
       />
     </div>
   );
