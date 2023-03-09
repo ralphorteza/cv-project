@@ -3,7 +3,7 @@ import GeneralInfo from "./form/GeneralInfo";
 import EducationInfo from "./form/EducationInfo";
 import ExperienceInfo from "./form/ExperienceInfo";
 
-export default function FormOverview({data, handleData, addSubForm}) {
+export default function FormOverview({data, handleData, addSubForm, deleteSubForm}) {
   const generalInformation = (
     <GeneralInfo 
       data={data}
@@ -18,6 +18,7 @@ export default function FormOverview({data, handleData, addSubForm}) {
       id={education.id}
       data={education}
       handleData={handleData}
+      deleteSubForm={deleteSubForm}
     />
   ));
 
@@ -28,6 +29,7 @@ export default function FormOverview({data, handleData, addSubForm}) {
       id={experience.id}
       data={experience}
       handleData={handleData}
+      deleteSubForm={deleteSubForm}
     />
   ));
 

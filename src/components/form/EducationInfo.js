@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function EducationInfo({id, data, handleData}) {
+export default function EducationInfo({id, data, handleData, deleteSubForm}) {
 
   return(
     <form className="education-info">
+      <button type="button" onClick={(e) => deleteSubForm(e, id)}>del</button>
       <label>
         University:
         <input

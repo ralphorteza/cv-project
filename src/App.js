@@ -5,12 +5,11 @@ import "./App.css";
 
 export default function App() {
   const initialState = [
-    {category:"general", id: nanoid(), firstName:"ralph", lastName:"orteza", address:"", phone:"1234", email:""},
+    {category:"general", id: nanoid(), firstName:"", lastName:"", address:"", phone:"", email:""},
     {category:"education", id: nanoid(), university:"", location:"", degree:"", from:"", to:""},
     {category:"experience", id: nanoid(), company:"", location:"", position:"", from:"", to:""}
   ]
   
-  /* Find a way to have multiple instances of ExperienceInfo */
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("data")) || initialState
   );
@@ -66,12 +65,18 @@ export default function App() {
     setData(prevData => [...prevData, type])
   }
 
+  function deleteSubForm(e, id) {
+    e.stopPropagation();
+    setData(prevData => prevData.filter(item => item.id !== id));
+  }
+
   return (
     <div>
       <FormOverview
         handleData={handleData}
         data={data}
         addSubForm={addSubForm}
+        deleteSubForm={deleteSubForm}
       />
     </div>
   );

@@ -1,9 +1,10 @@
 import React from "react"
 
-export default function experience({id, data, handleData}) {
+export default function ExperienceInfo({id, data, handleData, deleteSubForm}) {
 
   return(
     <form className="experience-info">
+      <button type="button" onClick={(e) => deleteSubForm(e, id)}>del</button>
       <label>
         Company:
         <input
