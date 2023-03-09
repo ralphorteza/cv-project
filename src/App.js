@@ -14,10 +14,16 @@ export default function App() {
   const [data, setData] = React.useState(
     () => JSON.parse(localStorage.getItem("data")) || initialState
   );
+
+  const [displayPreview, setDisplayPreview] = React.useState(false);
   
   React.useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
   }, [data]);
+
+  function togglePreview() {
+    setDisplayPreview( prevState => !prevState);
+  }
 
   function handleData(e, id) {
     const {value, name} = e.target;
@@ -71,7 +77,9 @@ export default function App() {
         addSubForm={addSubForm}
         deleteSubForm={deleteSubForm}
       />
+      <button onClick={togglePreview}>Show Preview</button>
       <PreviewCV
+        isDisplayed={displayPreview}
         data={data}
       />
     </div>
