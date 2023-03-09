@@ -1,5 +1,6 @@
 import React from "react";
 import FormOverview from "./components/FormOverview";
+import PreviewCV from "./components/PreviewCV";
 import { nanoid } from "nanoid";
 import "./App.css";
 
@@ -69,6 +70,9 @@ export default function App() {
         data={data}
         addSubForm={addSubForm}
         deleteSubForm={deleteSubForm}
+      />
+      <PreviewCV
+        data={data}
       />
     </div>
   );
