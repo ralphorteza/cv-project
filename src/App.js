@@ -20,20 +20,12 @@ export default function App() {
 
   function handleData(e, id) {
     const {value, name} = e.target;
+    
     setData(prevData => {
-      const newArray = [];
-
-      for (let i = 0; i < prevData.length; i++) {
-        const oldData = prevData[i];
-
-        if (oldData.id === id) {
-          newArray.push({...oldData, [name]: value});
-        } else {
-          newArray.push(oldData);
-        }
-      }
-
-      return newArray;
+      return prevData.map( item => {
+        if (item.id !== id) return item;
+        return {...item, [name]: value};
+      });
     });
   }
 
